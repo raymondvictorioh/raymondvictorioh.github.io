@@ -12,6 +12,31 @@
 src='//fw-cdn.com/11760432/4380196.js'
 chat='true'>
 </script>
+
+<script>
+  // Function to determine if the widget should be hidden based on screen width
+  function shouldHideWidgetForMobile() {
+    // Define the screen width threshold for mobile view
+    var mobileWidthThreshold = 768; // You can adjust this value as needed
+
+    // Get the current screen width
+    var screenWidth = window.innerWidth;
+
+    // Check if the screen width is less than the mobile width threshold
+    return screenWidth < mobileWidthThreshold;
+  }
+
+  // Set the Freshchat widget configuration based on the screen width
+  if (shouldHideWidgetForMobile()) {
+    window.fcWidgetMessengerConfig = {
+      config: {
+        headerProperty: {
+          hideChatButton: true,
+        }
+      }
+    };
+  }
+</script>
 <!-- End of Freshwork Chatbot Widget script -->
 
 </body>
